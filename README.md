@@ -19,6 +19,7 @@ We monitor 18 critical services across our platform:
 ## How It Works
 
 Upptime runs automated checks every 5 minutes via GitHub Actions. When a service goes down:
+
 1. A GitHub issue is created
 2. The team is notified via email
 3. The status page updates automatically
