@@ -2,7 +2,7 @@ name: Upptime Setup
 on:
   push:
     branches:
-      - claude/implement-upptime-status-cwRKb
+      - main
   workflow_dispatch:
 
 permissions:
