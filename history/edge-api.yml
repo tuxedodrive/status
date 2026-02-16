@@ -1,7 +1,7 @@
 url: https://api.tuxedodrive.com/health
-status: up
-code: 200
-responseTime: 391
-lastUpdated: 2026-01-22T23:19:50.867Z
+status: down
+code: 503
+responseTime: 225
+lastUpdated: 2026-02-16T20:29:03.204Z
 startTime: 2026-01-14T17:52:52.011Z
 generator: Upptime <https://github.com/upptime/upptime>
