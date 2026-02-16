@@ -235,7 +235,7 @@ sites:
 
 # Status website configuration
 status-website:
-  cname: status.tuxedo.drive.dev
+  cname: status.tuxedodrive.dev
   logoUrl: https://tuxedodrive.com/favicon.ico
   name: TuxedoDrive Status
   introTitle: "🏈 **Your car wash platform, always running**"
@@ -312,7 +312,7 @@ i18n:
   copyrightNotice: "Copyright © 2025 TuxedoDrive. All rights reserved. Keep your car wash running smoothly."
   links:
     - text: "📊 Real-time Status"
-      href: "https://status.tuxedo.drive.dev"
+      href: "https://status.tuxedodrive.dev"
     - text: "🏈 Main Website"
       href: "https://tuxedodrive.com"
     - text: "🐙 GitHub"
