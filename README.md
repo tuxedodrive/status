@@ -2,7 +2,7 @@
 
 This repository contains the status page for TuxedoDrive, powered by [Upptime](https://upptime.js.org).
 
-**Live status page:** [status.tuxedodrive.com](https://status.tuxedodrive.com)
+**Live status page:** [status.tuxedodrive.dev](https://status.tuxedodrive.dev)
 
 ## Monitored Services
 
