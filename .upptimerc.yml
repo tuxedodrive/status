@@ -1,0 +1,321 @@
+# Upptime Status Page Configuration
+# https://github.com/upptime/upptime
+#
+# TuxedoDrive Production Monitoring
+# Monitors all critical services supporting car wash operations
+# Total services: 18 (internal APIs + external integrations)
+#
+# 🏈 BRAND VOICE & UX APPROACH
+# ============================================================================
+# This status page uses TuxedoDrive's friendly, supportive brand voice to help
+# users understand their platform's health at a glance.
+#
+# Key design principles:
+# 1. Emoji Icons: Each service has a clear emoji for quick visual identification
+# 2. Service Categorization: Grouped by function (Core Platform, Payments, Email, etc.)
+# 3. Helpful Descriptions: Comments explain what each service does and why it matters
+# 4. Friendly Messaging: Intro text explains the page purpose in user-friendly language
+# 5. Clear Action Items: Color codes (green/orange/red) guide users on what to do
+# 6. Support-First Approach: Easy paths to get help when something goes wrong
+#
+# Services are organized in 8 logical categories:
+# - 🏈 Internal Services (core platform & dashboards)
+# - 💳 Payment Processing (financial transactions)
+# - 📧 Email Services (confirmations & alerts)
+# - 📱 SMS & Messaging (quick notifications)
+# - 🔐 Authentication (login & security)
+# - 🏗️ Infrastructure (hosting & deployment)
+# - 🔒 Cloud Services (secrets & security)
+# - ⚙️ Features (critical endpoints)
+
+owner: tuxedodrive
+repo: status
+user-agent: Upptime (https://upptime.js.org)
+
+# Services to monitor
+# Internal services (our APIs) + External integrations (critical dependencies)
+sites:
+  # ============================================================================
+  # 🏈 INTERNAL SERVICES - Our Car Wash Platform
+  # ============================================================================
+  # Your TuxedoDrive core experience. These are the systems we control.
+
+  - name: 🚗 Production Application
+    url: https://tuxedodrive.com/health
+    icon: https://tuxedodrive.com/favicon.ico
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+    checkKeywords:
+      - status
+      - healthy
+
+  - name: 🧪 Staging Application
+    url: https://staging.tuxedodrive.com/health
+    icon: https://tuxedodrive.com/favicon.ico
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+    checkKeywords:
+      - status
+      - healthy
+
+  - name: 📡 Edge API
+    url: https://api.tuxedodrive.com/health
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+    checkKeywords:
+      - status
+
+  - name: 👥 Customer Dashboard
+    url: https://tuxedodrive.com/queens
+    expectedStatusCodes:
+      - 200
+      - 302
+    timeout: 5000
+    method: GET
+
+  - name: 👔 Operator Dashboard
+    url: https://staging.tuxedodrive.com/demo/operator
+    expectedStatusCodes:
+      - 200
+      - 302
+    timeout: 5000
+    method: GET
+
+  - name: 📊 Owner Dashboard
+    url: https://tuxedodrive.com/owner/dashboard
+    expectedStatusCodes:
+      - 200
+      - 302
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # 💳 PAYMENT PROCESSING - Taking Care of Transactions
+  # ============================================================================
+  # Your customers' money moves safely through here.
+
+  - name: 💰 Stripe Payments
+    url: https://api.stripe.com/v1/charges
+    expectedStatusCodes:
+      - 400
+      - 401
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # 📧 EMAIL SERVICES - Keeping Everyone Connected
+  # ============================================================================
+  # Confirmations, receipts, alerts. We've got two email partners for reliability.
+
+  - name: 📬 Postmark Email Service
+    url: https://api.postmarkapp.com/server/stats
+    expectedStatusCodes:
+      - 400
+      - 401
+      - 422
+    timeout: 5000
+    method: GET
+
+  - name: 📨 SendGrid Webhooks
+    url: https://api.sendgrid.com/v3/mail/validate
+    expectedStatusCodes:
+      - 400
+      - 401
+      - 405
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # 📱 SMS & MESSAGING - Quick Notifications
+  # ============================================================================
+  # Text messages to your phone when it matters.
+
+  - name: 💬 Twilio SMS Service
+    url: https://api.twilio.com/
+    expectedStatusCodes:
+      - 401
+      - 403
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # 🔐 AUTHENTICATION - Secure Access Control
+  # ============================================================================
+  # Your login experience and identity verification.
+
+  - name: 🔑 Google OAuth
+    url: https://accounts.google.com/.well-known/openid-configuration
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+
+  - name: 🌐 Google Cloud APIs
+    url: https://www.googleapis.com/
+    expectedStatusCodes:
+      - 200
+      - 400
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # 🏗️ INFRASTRUCTURE & DEPLOYMENT - Where We Live
+  # ============================================================================
+  # The backbone keeping TuxedoDrive online 24/7.
+
+  - name: 🚀 Render Deployment Platform
+    url: https://render.com/status
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+
+  - name: 🐙 GitHub Status
+    url: https://www.githubstatus.com/
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+
+  - name: 🔗 GitHub APIs
+    url: https://api.github.com/
+    expectedStatusCodes:
+      - 200
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # 🔒 CLOUD SERVICES - Security & Secrets
+  # ============================================================================
+  # Where we safely store your sensitive configuration.
+
+  - name: 🛡️ Doppler Secrets Management
+    url: https://api.doppler.com/
+    expectedStatusCodes:
+      - 401
+      - 400
+    timeout: 5000
+    method: GET
+
+  # ============================================================================
+  # ⚙️ FEATURE-SPECIFIC ENDPOINTS - The Details That Matter
+  # ============================================================================
+  # Critical features that make your car wash operations run smoothly.
+
+  - name: 📍 Location Management
+    url: https://tuxedodrive.com/owner/locations
+    expectedStatusCodes:
+      - 200
+      - 302
+    timeout: 5000
+    method: GET
+
+  - name: 💵 Cash Handling System
+    url: https://staging.tuxedodrive.com/demo/cash
+    expectedStatusCodes:
+      - 200
+      - 302
+    timeout: 5000
+    method: GET
+
+  - name: ✅ Payment Webhook Handler
+    url: https://tuxedodrive.com/stripe/webhook
+    expectedStatusCodes:
+      - 200
+      - 400
+      - 405
+    timeout: 5000
+    method: POST
+
+# Status website configuration
+status-website:
+  cname: status.tuxedodrive.com           # Custom domain (optional)
+  logoUrl: https://tuxedodrive.com/favicon.ico
+  name: TuxedoDrive Status
+  introTitle: "🏈 **Your car wash platform, always running**"
+  introMessage: |
+    Welcome to TuxedoDrive's status page. We monitor **18 critical systems** across our entire platform — from your customer dashboards and payment processing, to email notifications and SMS alerts — so you can focus on what matters: running a smooth car wash operation.
+
+    **Everything green?** You're good to go. **Something orange or red?** We're already on it, and you'll see updates here. Questions? Drop us a line at engineering@tuxedodrive.com — we're here to help.
+  navbar:
+    - title: Status
+      href: /
+    - title: TuxedoDrive Website
+      href: https://tuxedodrive.com
+    - title: GitHub
+      href: https://github.com/tuxedodrive/status
+    - title: Support
+      href: mailto:engineering@tuxedodrive.com
+  navbar2:
+    - rss: /feed.xml
+
+# Response time display and charts
+responseTimeChart:
+  scale: hour
+
+graphsPerPage: 12
+
+# Brand colors
+colors:
+  success: "#10b981"    # Emerald green - service healthy
+  degraded: "#f97316"   # Orange - service degraded
+  down: "#ef4444"       # Red - service down
+
+# Notifications (create issues when services go down)
+# When a service goes down, we immediately open a GitHub issue and alert the team via email
+notifications:
+  - type: github-issue
+    title: "🚨 Service Alert: $SITE_NAME is experiencing issues"
+    assignees:
+      - tuxedodrive
+  - type: email
+    to: engineering@tuxedodrive.com
+    subject: "⚠️ TuxedoDrive Status Alert: $SITE_NAME"
+
+# Monitoring schedules (cron format)
+workflowSchedule:
+  responseTime: "0 23 * * *"    # Daily @ 11 PM UTC
+  graphs: "0 0 * * *"           # Daily @ midnight UTC
+  checks: "*/5 * * * *"         # Every 5 minutes
+  uptime: "0 */4 * * *"         # Every 4 hours
+  trigger: "0 * * * *"          # Every hour for manual triggers
+  site: "0 1 * * *"             # Daily @ 1 AM UTC
+
+# Git commit details
+commitMessages:
+  commitAuthorName: "Upptime Bot"
+  commitAuthorEmail: "bot@upptime.js.org"
+
+# Status page features
+statusPageTemplate: "Markdown"
+
+# Keep 90 days of history (3 months)
+history:
+  lines: 90
+
+# Number of failed checks before marking service as down
+threshold: 5
+
+# Additional features
+averageResponse: true
+responseTimeIndicator: true
+charts: true
+
+# i18n/copyright and footer
+i18n:
+  copyrightNotice: "Copyright © 2025 TuxedoDrive. All rights reserved. Keep your car wash running smoothly."
+  links:
+    - text: "📊 Real-time Status"
+      href: "https://status.tuxedodrive.com"
+    - text: "🏈 Main Website"
+      href: "https://tuxedodrive.com"
+    - text: "🐙 GitHub"
+      href: "https://github.com/tuxedodrive/status"
+    - text: "💬 Support"
+      href: "mailto:engineering@tuxedodrive.com"

@@ -1,0 +1,51 @@
+name: Upptime Setup
+on:
+  push:
+    branches:
+      - claude/implement-upptime-status-cwRKb
+  workflow_dispatch:
+
+permissions:
+  checks: write
+  contents: write
+  deployments: write
+  pull-requests: read
+  statuses: write
+
+jobs:
+  release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update template
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "update-template"
+        env:
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update README
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "readme"
+        env:
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate site
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "site"
+        env:
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: Upptime setup [skip ci]"
+          commit_user_name: "Upptime Bot"
+          commit_user_email: "bot@upptime.js.org"

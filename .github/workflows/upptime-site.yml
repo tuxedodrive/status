@@ -1,0 +1,41 @@
+name: Upptime Site
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  repository_dispatch:
+    types: [Webhook]
+  workflow_dispatch:
+
+permissions:
+  checks: write
+  contents: write
+  deployments: write
+  issues: read
+  pull-requests: read
+  statuses: write
+
+jobs:
+  release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: upptime-status
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate site
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "site"
+        env:
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: Update site [skip ci]"
+          commit_user_name: "Upptime Bot"
+          commit_user_email: "bot@upptime.js.org"
+          branch: upptime-status
