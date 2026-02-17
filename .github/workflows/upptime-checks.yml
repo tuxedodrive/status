@@ -10,7 +10,7 @@ permissions:
   checks: write
   contents: write
   deployments: write
-  issues: read
+  issues: write
   pull-requests: read
   statuses: write
 
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: upptime-status
+          ref: main
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run health checks
@@ -29,7 +29,8 @@ jobs:
         with:
           command: "checks"
         env:
-          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -37,4 +38,4 @@ jobs:
           commit_message: "chore: Upptime CI [skip ci]"
           commit_user_name: "Upptime Bot"
           commit_user_email: "bot@upptime.js.org"
-          branch: upptime-status
+          branch: main
