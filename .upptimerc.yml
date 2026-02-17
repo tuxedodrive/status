@@ -27,6 +27,12 @@
 # - 🏗️ Infrastructure (hosting & deployment)
 # - 🔒 Cloud Services (secrets & security)
 # - ⚙️ Features (critical endpoints)
+#
+# 🔧 MAINTENANCE NOTES
+# ============================================================================
+# When REMOVING a service: Also delete history/, api/, and graphs/ artifacts.
+# When ADDING external APIs: Test with curl first, use broad expectedStatusCodes.
+# See AGENTS.md for full details.
 
 owner: tuxedodrive
 repo: status
