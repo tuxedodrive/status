@@ -1,0 +1,8 @@
+# Upptime generated site (pushed to gh-pages, not main)
+site/
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
