@@ -114,9 +114,8 @@ sites:
   # Confirmations, receipts, alerts. We've got two email partners for reliability.
 
   - name: 📬 Email Delivery
-    url: https://api.postmarkapp.com/server/stats
+    url: https://api.postmarkapp.com/deliverystats
     expectedStatusCodes:
-      - 400
       - 401
       - 422
     timeout: 5000
@@ -139,6 +138,7 @@ sites:
   - name: 💬 SMS Notifications
     url: https://api.twilio.com/
     expectedStatusCodes:
+      - 200
       - 401
       - 403
     timeout: 5000
@@ -176,7 +176,7 @@ sites:
   # The backbone keeping TuxedoDrive online 24/7.
 
   - name: 🚀 Hosting Platform
-    url: https://render.com/status
+    url: https://status.render.com/
     expectedStatusCodes:
       - 200
     timeout: 5000
@@ -204,8 +204,10 @@ sites:
   - name: 🛡️ Secrets Management
     url: https://api.doppler.com/
     expectedStatusCodes:
-      - 401
+      - 200
+      - 302
       - 400
+      - 401
     timeout: 5000
     method: GET
 

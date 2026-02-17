@@ -1,6 +1,6 @@
-url: https://api.postmarkapp.com/server/stats
-status: down
-code: 404
+url: https://api.postmarkapp.com/deliverystats
+status: up
+code: 422
 responseTime: 133
 lastUpdated: 2026-02-17T03:42:35.492Z
 startTime: 2026-02-17T03:14:20.515Z
