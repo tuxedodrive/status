@@ -238,7 +238,7 @@ status-website:
   cname: status.tuxedodrive.dev
   logoUrl: https://tuxedodrive.com/favicon.ico
   name: TuxedoDrive Status
-  introTitle: "🏈 **Your car wash platform, always running**"
+  introTitle: "**Your car wash platform, always running**"
   introMessage: |
     Welcome to TuxedoDrive's status page. We monitor **18 critical systems** across our entire platform — from your customer dashboards and payment processing, to email notifications and SMS alerts — so you can focus on what matters: running a smooth car wash operation.
 
@@ -313,7 +313,7 @@ i18n:
   links:
     - text: "📊 Real-time Status"
       href: "https://status.tuxedodrive.dev"
-    - text: "🏈 Main Website"
+    - text: "🚗 Main Website"
       href: "https://tuxedodrive.com"
     - text: "🐙 GitHub"
       href: "https://github.com/tuxedodrive/status"
