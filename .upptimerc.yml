@@ -156,11 +156,17 @@ sites:
     timeout: 5000
     method: GET
 
-  - name: 🌐 Cloud APIs
-    url: https://www.googleapis.com/
+  - name: 🌤️ Weather Service
+    url: https://api.openweathermap.org/data/2.5/weather
     expectedStatusCodes:
-      - 200
-      - 400
+      - 401
+    timeout: 5000
+    method: GET
+
+  - name: 🌸 Pollen Service
+    url: https://pollen.googleapis.com/v1/forecast:lookup
+    expectedStatusCodes:
+      - 403
     timeout: 5000
     method: GET
 
