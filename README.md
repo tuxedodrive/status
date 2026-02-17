@@ -4,19 +4,16 @@
 
 **Live status page:** [status.tuxedodrive.dev](https://status.tuxedodrive.dev)
 
-🌌 Why did we create this status page?
-=============================
+# 🌌 Why did we create this status page?
 
 TuxedoDrive depends on 18 external services. When something goes wrong, we need to know immediately—and so do our users. This status page provides transparency and automated monitoring so we can respond to outages quickly.
 
-🌌🌌 Who benefits from it?
-=============================
+# 🌌🌌 Who benefits from it?
 
 - **TuxedoDrive users** who want to check if an issue is on our end
 - **The TuxedoDrive team** who need immediate alerts when services fail
 
-🌌🌌🌌 What does it do?
-=============================
+# 🌌🌌🌌 What does it do?
 
 Monitors 18 critical services across our platform:
 
@@ -28,8 +25,7 @@ Monitors 18 critical services across our platform:
 - **Infrastructure** - Render, GitHub
 - **Cloud Services** - Doppler
 
-🌌🌌🌌🌌 How does it work?
-=============================
+# 🌌🌌🌌🌌 How does it work?
 
 Powered by [Upptime](https://upptime.js.org), this runs automated checks every 5 minutes via GitHub Actions. When a service goes down:
 
@@ -37,8 +33,7 @@ Powered by [Upptime](https://upptime.js.org), this runs automated checks every 5
 2. The team is notified via email
 3. The status page updates automatically
 
-🌌🌌🌌🌌🌌 Extras
-=============================
+# 🌌🌌🌌🌌🌌 Extras
 
 ## License
 
