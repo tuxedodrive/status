@@ -1,12 +1,24 @@
 # TuxedoDrive Status
 
-This repository contains the status page for TuxedoDrive, powered by [Upptime](https://upptime.js.org).
+[![Conforms to README.lint](https://img.shields.io/badge/README.lint-conforming-brightgreen)](https://github.com/discoveryworks/readme-dot-lint)
 
 **Live status page:** [status.tuxedodrive.dev](https://status.tuxedodrive.dev)
 
-## Monitored Services
+🌌 Why did we create this status page?
+=============================
 
-We monitor 18 critical services across our platform:
+TuxedoDrive depends on 18 external services. When something goes wrong, we need to know immediately—and so do our users. This status page provides transparency and automated monitoring so we can respond to outages quickly.
+
+🌌🌌 Who benefits from it?
+=============================
+
+- **TuxedoDrive users** who want to check if an issue is on our end
+- **The TuxedoDrive team** who need immediate alerts when services fail
+
+🌌🌌🌌 What does it do?
+=============================
+
+Monitors 18 critical services across our platform:
 
 - **Internal Services** - Production, staging, dashboards
 - **Payment Processing** - Stripe
@@ -16,13 +28,17 @@ We monitor 18 critical services across our platform:
 - **Infrastructure** - Render, GitHub
 - **Cloud Services** - Doppler
 
-## How It Works
+🌌🌌🌌🌌 How does it work?
+=============================
 
-Upptime runs automated checks every 5 minutes via GitHub Actions. When a service goes down:
+Powered by [Upptime](https://upptime.js.org), this runs automated checks every 5 minutes via GitHub Actions. When a service goes down:
 
 1. A GitHub issue is created
 2. The team is notified via email
 3. The status page updates automatically
+
+🌌🌌🌌🌌🌌 Extras
+=============================
 
 ## License
 
