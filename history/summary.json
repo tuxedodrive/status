@@ -25,19 +25,19 @@
     "url": "https://staging.tuxedodrive.com/health",
     "icon": "https://tuxedodrive.com/favicon.ico",
     "slug": "staging-application",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 346,
-    "timeDay": 346,
-    "timeWeek": 346,
-    "timeMonth": 346,
-    "timeYear": 346,
+    "status": "up",
+    "uptime": "99.97%",
+    "uptimeDay": "98.92%",
+    "uptimeWeek": "99.85%",
+    "uptimeMonth": "99.96%",
+    "uptimeYear": "99.97%",
+    "time": 321,
+    "timeDay": 321,
+    "timeWeek": 321,
+    "timeMonth": 321,
+    "timeYear": 321,
     "dailyMinutesDown": {
-      "2026-02-17": 0
+      "2026-02-17": 16
     }
   },
   {
@@ -150,7 +150,7 @@
     "timeMonth": 135,
     "timeYear": 135,
     "dailyMinutesDown": {
-      "2026-02-17": 841
+      "2026-02-17": 857
     }
   },
   {
@@ -188,7 +188,7 @@
     "timeMonth": 118,
     "timeYear": 118,
     "dailyMinutesDown": {
-      "2026-02-17": 841
+      "2026-02-17": 857
     }
   },
   {
@@ -262,7 +262,7 @@
     "timeMonth": 259,
     "timeYear": 259,
     "dailyMinutesDown": {
-      "2026-02-17": 841
+      "2026-02-17": 856
     }
   },
   {
@@ -318,7 +318,7 @@
     "timeMonth": 355,
     "timeYear": 355,
     "dailyMinutesDown": {
-      "2026-02-17": 841
+      "2026-02-17": 856
     }
   },
   {
