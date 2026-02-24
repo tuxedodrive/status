@@ -1,7 +1,7 @@
 url: https://staging.tuxedodrive.com/demo/operator
-status: down
-code: 404
-responseTime: 216
-lastUpdated: 2026-02-24T06:37:29.125Z
+status: up
+code: 200
+responseTime: 201
+lastUpdated: 2026-02-24T07:09:02.088Z
 startTime: 2026-01-14T17:52:54.115Z
 generator: Upptime <https://github.com/upptime/upptime>
