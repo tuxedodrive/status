@@ -1,7 +1,7 @@
 url: https://staging.tuxedodrive.com/demo/cash
-status: down
-code: 502
-responseTime: 317
-lastUpdated: 2026-02-26T21:55:02.397Z
+status: up
+code: 200
+responseTime: 577
+lastUpdated: 2026-02-26T22:11:44.501Z
 startTime: 2026-01-14T17:53:05.114Z
 generator: Upptime <https://github.com/upptime/upptime>
