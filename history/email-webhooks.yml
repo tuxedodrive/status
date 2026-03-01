@@ -1,7 +1,7 @@
 url: https://api.sendgrid.com/v3/mail/validate
 status: up
 code: 401
-responseTime: 225
-lastUpdated: 2026-03-01T23:03:10.083Z
+responseTime: 224
+lastUpdated: 2026-03-01T23:03:30.195Z
 startTime: 2026-02-17T03:14:21.122Z
 generator: Upptime <https://github.com/upptime/upptime>
