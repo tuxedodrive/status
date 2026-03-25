@@ -1,7 +1,7 @@
 url: https://api.postmarkapp.com/deliverystats
-status: down
-code: 403
-responseTime: 169
-lastUpdated: 2026-03-25T10:32:39.190Z
+status: up
+code: 422
+responseTime: 243
+lastUpdated: 2026-03-25T11:04:44.072Z
 startTime: 2026-02-17T03:14:20.515Z
 generator: Upptime <https://github.com/upptime/upptime>
