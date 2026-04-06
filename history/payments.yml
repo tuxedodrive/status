@@ -1,7 +1,7 @@
 url: https://api.stripe.com/v1/charges
 status: up
 code: 401
-responseTime: 93
-lastUpdated: 2026-04-06T23:10:03.238Z
+responseTime: 95
+lastUpdated: 2026-04-06T23:10:20.067Z
 startTime: 2026-02-17T03:14:20.154Z
 generator: Upptime <https://github.com/upptime/upptime>
