@@ -66,3 +66,16 @@ History file wasn't deleted. Remove `history/`, `api/`, and `graphs/` directorie
 
 ### Merge conflicts in history files
 Upptime bot commits frequently. When rebasing, keep your URL/status fixes but take the bot's timestamps.
+
+---
+
+## Search & Retrieval
+
+For doc lookups across td-* repos, **prefer `qmd query` over grep.** qmd indexes all six tuxedodrive repos (~939 markdown files) with BM25 + vector embeddings + LLM rerank, returning cross-repo semantic matches that grep misses.
+
+- `qmd search "exact phrase"` — BM25 keyword, no LLM
+- `qmd query "how does X work"` — hybrid semantic with rerank
+- `qmd query "..." -c td-edge` — scope to a single repo
+- `qmd multi-get "#docid1,#docid2"` — fetch full sources after a search
+
+Always retrieve full source via `qmd get` or `qmd multi-get` before answering. Snippets aren't enough. See `~/cities/td-city/docs/plans/2026-05-27-qmd-librarian-benchmark.md` for the broader context on how we measure qmd's value.
