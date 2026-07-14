@@ -1,7 +1,8 @@
 # Auto-add new issues to the org backlog (Project 1). td-meta#52.
-# Canonical caller — identical in every org repo. Do not edit in place:
-# change tuxedodrive/.github/workflow-templates/add-to-backlog.yml and
-# re-roll; tools/shepherd-autoadd-scan.sh flags drift.
+# Canonical copy: tuxedodrive/.github/workflow-templates/add-to-backlog.yml
+# Self-contained on purpose — cross-repo reusable calls from the private
+# .github repo fail resolution on this plan. Do not edit in place; re-roll
+# from canonical. tools/shepherd-autoadd-scan.sh flags drift.
 name: add-to-backlog
 
 on:
@@ -10,6 +11,9 @@ on:
 
 jobs:
   add:
-    uses: tuxedodrive/.github/.github/workflows/add-to-backlog.yml@main
-    secrets:
-      ADD_TO_BACKLOG_PAT: ${{ secrets.ADD_TO_BACKLOG_PAT }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v2
+        with:
+          project-url: https://github.com/orgs/tuxedodrive/projects/1
+          github-token: ${{ secrets.ADD_TO_BACKLOG_PAT }}
